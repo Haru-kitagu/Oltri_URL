@@ -1,0 +1,470 @@
+/* リセットと共通スタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* スムーズスクロール */
+}
+
+[lang="en"] {
+  font-family: 'Nunito', sans-serif;
+}
+
+:root {
+  --reel-padding: 1rem;
+  --reel-item-spacing: 0.5rem;
+  /*メインカラー*/
+  --primary-color: #f2f2f2;
+  /*サブカラー*/
+  --secondary-color: #0e1a25;
+  /*アクセントカラー*/
+  --accent-color: #ec4688;
+  /*テキストカラー*/
+  --text-color: #1a1a1a;
+  --light-background: #f2f2f2;
+  --light-text-color: #ffffff;
+  --dark-background: #0e1a25;
+  --dark-text-color: #1a1a1a;
+}
+
+
+p {
+  font-size: 1.0rem;
+  /*フォント*/
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+h1 {
+  /*フォント*/
+  font-size: 1.5em;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+h2 {
+  /*フォント*/
+  font-size: 2.0em;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    /*フォント*/
+    font-size: 1.5em;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 3rem;
+  }
+}
+
+h3 {
+  /*フォント*/
+  font-size: 1.8em;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  h3 {
+    /*フォント*/
+    font-size: 1.3em;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+h4 {
+  /*フォント*/
+  font-size: 1.6em;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  h4 {
+    /*フォント*/
+    font-size: 1.1em;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 3rem;
+  }
+}
+
+h5 {
+  /*フォント*/
+  font-size: 1.1em;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  h5 {
+    /*フォント*/
+    font-size: 1.0em;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+}
+
+.bold {
+  font-weight: 400;
+}
+
+/*ハイライト*/
+/*.highlight {
+  color: var(--accent-color);
+  font-weight: 500;
+}*/
+.highlight2 {
+  color: var(--light-text-color);
+}
+
+.highlight3 {
+  color: var(--light-text-color);
+  font-weight: 500;
+}
+
+.highlight4 {
+  font-weight: 500;
+}
+
+
+
+
+
+/* ヘッダー全体 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--dark-background);
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid #0e1a25;
+}
+
+/* ロゴ */
+.logo {
+  height: 50px;
+}
+
+/* メニュー */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 1.5rem;
+  background-color: var(--dark-background);
+  border: 1px solid #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.menu.open {
+  display: flex;
+}
+
+.nav,
+.menu li {
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.nav,
+.menu li:last-child {
+  margin-bottom: 0;
+}
+
+.nav,
+.menu a {
+  text-decoration: none;
+  color: var(--light-text-color);
+  font-weight: bold;
+}
+
+/* ハンバーガーボタン */
+.menu-toggle {
+  color: var(--light-text-color);
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* メニュー表示時 */
+.menu.open {
+  display: flex;
+}
+
+
+
+
+
+/*メインビジュアルセクション*/
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/*スマホ用*/
+@media screen and (max-width: 768px) {
+  .hero-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/*コンセプトセクション*/
+.concept {
+  color: var(--dark-text-color);
+  background-color: var(--light-background);
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+.concept h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.concept p {
+  line-height: 3.0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*Oltoriセクション*/
+.Oltri {
+  background-color: var(--dark-background);
+  color: var(--light-text-color);
+  line-height: 3.0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.Oltri-img {
+  flex: 1;
+  max-width: auto;
+  min-width: 200px;
+}
+
+.Oltri-img img {
+  width: 100%;
+  height: auto;
+}
+
+/*Oltri使い方*/
+.howto-img1 {
+  width: 30%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.howto-img2 {
+  width: 45%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.howto1-3 {
+  padding-top: 5rem;
+  background-color: var(--light-background);
+  padding-bottom: 3rem;
+}
+
+.howto1 {
+  margin-bottom: 6rem;
+}
+
+.howto2,
+.howto3 {
+  margin-top: 6rem;
+}
+
+.howto-wrapper {
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+}
+
+.howto4 {
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+}
+
+.howto5 {
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .howto4 {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+  }
+
+  .howto5 {
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+    margin-top: 0;
+  }
+}
+.howto1 .stack,
+.howto2 .stack,
+.howto3 .stack,
+.howto4 .stack,
+.howto5 .stack {
+  align-items: flex-start;
+  text-align: left;
+}
+
+
+
+/*アート再会日記*/
+.new {
+  background-color: var(--accent-color);
+  color: var(var(--light-background));
+  line-height: 3.0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/*アート再会日記*/
+.dairy-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+
+
+/*Oltriのみなさんに聞いてみた*/
+.guest {
+  padding: 4rem 1rem;
+  background-color: var(--light-background);
+}
+
+.guest-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/*アプリのダウンロード*/
+.download {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+
+.download-icon {
+  flex-shrink: 0;
+}
+
+.download-img {
+  width: 200px;
+  border-radius: 1rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .download-img {
+    margin-top: 3rem;
+  }
+}
+
+
+.download-screenshot {
+  width: 200px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  margin-top: 3rem;
+}
+
+
+
+
+
+/*フッター*/
+footer{
+  background-color: var(--light-background);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-icon {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.footer-icon img {
+  width: 30px;
+  height: 30px;
+}

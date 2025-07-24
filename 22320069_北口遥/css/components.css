@@ -1,0 +1,156 @@
+/*コンセプトセクション*/
+/*03. Center Component - 水平方向の中央揃え*/
+
+.center {
+    /* コンテンツ幅で計算する */
+    box-sizing: content-box;
+
+    /* 親要素のセンタリング */
+    max-width: 40ic;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 子要素の揃え */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*Oltriセクション*/
+/* 05. Sidebar Component - サイドバーレイアウト*/
+.sidebar {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.sidebar> :first-child {
+    flex-grow: 1;
+}
+
+.sidebar> :last-child {
+    flex-basis: 0;
+    /* スペース最大まで拡大する */
+    flex-grow: 999;
+    /* 最小幅 これを下回るとシングルカラムになる*/
+    min-width: 70%;
+}
+
+/*06. Switcher Component - レスポンシブなレイアウト切り替え */
+.switcher {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 2;
+    max-width: 40rem;
+}
+
+.switcher>* {
+    flex-grow: 1;
+    flex-basis: calc((var(--threshold) - 100%) * 999);
+}
+
+
+
+
+
+
+
+
+/*使い方セクション…houto=h*/
+.sidebar-h {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* スマホ対応用 */
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+.sidebar-h> :first-child,
+.sidebar-h> :last-child {
+    flex-grow: 1;
+    flex-basis: 30rem;
+    /* ≒480px。*/
+}
+
+
+
+
+
+
+
+
+/*Oltriのみなさん*/
+.center-g {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/*08. Grid Component - レスポンシブグリッドレイアウト */
+.grid {
+    display: grid;
+    grid-gap: 1.5rem;
+    /* カラム最小幅 */
+    --minimum: 15ic;
+
+    /* カラム設定 */
+    grid-template-columns: repeat(auto-fit,
+            minmax(min(var(--minimum), 100%), 1fr));
+    align-items: start;
+}
+
+/* 画像・名前・テキストを縦に積む */
+.stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+
+
+
+/*ダウンロードセクション*/
+.sidebar-d {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/*フッター*/
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space, 1rem);
+
+  justify-content: space-between;
+  align-items: center;
+}
+.stack-small>*+* {
+  margin-block-start: 0.8rem;
+}
+
